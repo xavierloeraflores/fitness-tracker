@@ -7,7 +7,7 @@ const App = ()=>{
 
     return(
         <>
-        What The Fuck
+        What The Fuck bro
         </>
     )
 }
