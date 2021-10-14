@@ -20,7 +20,7 @@ const Nav = () => {
                 <Link className='nav-link' to = '/'>Home</Link>
                 <Link className='nav-link' to = '/profile'>Profile</Link>
                 {
-                    !isLoggedIn ? <Link className='nav-link' to = '/' onClick={logOut}>Log Out</Link>: (<>
+                    isLoggedIn ? <Link className='nav-link' to = '/' onClick={logOut}>Log Out</Link>: (<>
                             <Link className='nav-link' to = '/user/login'>Log In</Link>
                             <Link className='nav-link' to = '/user/register'>Register</Link>
                         </>)

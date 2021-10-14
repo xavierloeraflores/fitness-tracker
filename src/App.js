@@ -1,5 +1,6 @@
-import React from "react";
-
+import React, {useContext, useEffect}  from 'react'
+import { Route } from 'react-router';
+import Authentication from './components/Authentication';
 
 
 const App = ()=>{
@@ -7,7 +8,18 @@ const App = ()=>{
 
     return(
         <>
-        What The Fuck
+            <Route exact path='/'>
+                HOME
+            </Route>
+            <Route exact path='/profile'>
+                {/* <Profile/> */}
+            </Route>
+            <Route path='/user/:method'>
+                <Authentication/>
+            </Route>
+            <Route path='/user/:method'>
+                Register
+            </Route>
         </>
     )
 }
