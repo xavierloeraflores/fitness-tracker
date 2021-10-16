@@ -14,6 +14,7 @@ const App = ()=>{
 
     return(
         <>
+
             <Route exact path='/'>
                 <Home/>
             </Route>
@@ -33,6 +34,7 @@ const App = ()=>{
                 <MyRoutines/>
             </Route>
             <Test />
+
         </>
     )
 }
