@@ -29,6 +29,7 @@ const Authentication = () =>{
         if (params.method=='register') {
             const registerData = await register({username:username, password:password})
             if(registerData && !registerData.name) {
+                localStorage.setItem("userToken", registerData.token);
                 setUserToken(registerData.token)
                 setIsLoggedIn(true)
             }else{
@@ -39,6 +40,7 @@ const Authentication = () =>{
             const loginData = await login({username:username, password:password})
             console.log(loginData)
             if (loginData && !loginData.name) {
+                localStorage.setItem("userToken", loginData.token);
                 setUserToken(loginData.token)
                 setIsLoggedIn(true)
             }

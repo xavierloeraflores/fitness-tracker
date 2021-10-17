@@ -22,10 +22,10 @@ const Routine=(routine)=>{
     const {id, creatorId, isPublic, name, goal, creatorName, activities} = routine.routine
     return (
         <>
-        <span>{name}</span>
+        <span><b>{name}</b></span>
         <span>{creatorName}</span>
         <span>{goal}</span>
-        <span></span>
+        <span>---</span>
         {activities.map((activity, idx)=>{
             return <Activity activity={activity} key={idx}/>
         })}

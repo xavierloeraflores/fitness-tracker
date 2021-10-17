@@ -1,5 +1,6 @@
 import React, {useContext, useEffect}  from 'react'
 import { Route } from 'react-router';
+import { UserContext } from './context/UserContext';
 import Authentication from './components/Authentication';
 import Activities from './components/Activities'
 import Routines from './components/Routines'
@@ -10,6 +11,14 @@ import Test from './components/Test'
 
 
 const App = ()=>{
+    const {setUserToken, setIsLoggedIn }= useContext(UserContext)
+
+    useEffect(()=>{
+        if(localStorage.getItem('userToken')!=''){
+            setUserToken(localStorage.getItem('userToken'))
+            setIsLoggedIn(true)
+        }
+    }, [])
 
 
     return(

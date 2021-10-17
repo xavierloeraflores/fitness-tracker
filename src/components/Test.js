@@ -23,6 +23,7 @@ function Test() {
             const loginData = await login({username:'sandra', password:'sandra123'})
             console.log(loginData)
             if (loginData) {
+                localStorage.setItem("userToken", loginData.token);
                 setUserToken(loginData.token)
                 setIsLoggedIn(true)
             }

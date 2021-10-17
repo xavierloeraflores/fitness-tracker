@@ -91,5 +91,28 @@ export const getMyRoutines = async (token) =>{
   }catch(error){
       throw error
   }
-
+}
+  export const getAllRoutines = async () =>{
+    try{
+      const endpoint = `/routines`
+      const data = await request({
+        endpoint:endpoint, 
+        method:'GET',
+      })
+      return data
+    }catch(error){
+        throw error
+    }
+}
+export const getAllActivities = async () =>{
+  try{
+    const endpoint = `/activities`
+    const data = await request({
+      endpoint:endpoint, 
+      method:'GET',
+    })
+    return data
+  }catch(error){
+      throw error
+  }
 }
