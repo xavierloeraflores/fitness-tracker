@@ -8,10 +8,23 @@ import Profile from './components/Profile'
 import MyRoutines from './components/MyRoutines'
 import Home from './components/Home'
 import Test from './components/Test'
+import { makeStyles, Paper } from "@material-ui/core";
 
+const useStyles = makeStyles({
 
+    App: {
+      display: "flex",
+      flexFlow:'column',
+      alignItems:'center',
+      width:'80vw',
+      minHeight:'75vh',
+      padding:'1rem'
+        }
+  });
+    
 const App = ()=>{
-    const {setUserToken, setIsLoggedIn }= useContext(UserContext)
+      const classes = useStyles();
+      const {setUserToken, setIsLoggedIn }= useContext(UserContext)
 
     useEffect(()=>{
         if(localStorage.getItem('userToken')!=''){
@@ -22,7 +35,7 @@ const App = ()=>{
 
 
     return(
-        <>
+        <Paper elevation={3} className={classes.App}>
 
             <Route exact path='/'>
                 <Home/>
@@ -44,7 +57,7 @@ const App = ()=>{
             </Route>
             <Test />
 
-        </>
+        </Paper>
     )
 }
 

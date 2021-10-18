@@ -1,18 +1,16 @@
 import React from 'react'
+import { Typography, Card, CardContent } from "@material-ui/core";
 
 const Activity =(activity)=>{
-    const {id, creatorId, isPublic, duration, name, goal, count} = activity.activity
+    const {id, creatorId, isPublic, name, description} = activity.activity
     return(
-        <>
-            <span>{name}</span>
-            <span>{goal}</span>
-            <span>{count}</span>
-            <span>{duration}</span>
-            <span>------</span>
+        <Card>
+            <CardContent>
+            <Typography variant="h5">{name}</Typography>
+            <Typography variant="body1">{description}</Typography>
+            </CardContent>
+        </Card>
 
-
-
-        </>
     )
 
 }

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { getAllRoutines } from '../utils/apiClient'
 import Routine from './Routine'
+import { Typography } from '@material-ui/core'
 
 function Routines() {
 
@@ -17,6 +18,7 @@ function Routines() {
     }, [])
     return (
         <div>
+            <Typography variant='h3'>Routines</Typography>
             {routines.map((routine, idx)=>{
                 return <Routine routine={routine} key={idx}/>
             })}
