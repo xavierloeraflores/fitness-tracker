@@ -9,6 +9,7 @@ import MyRoutines from './components/MyRoutines'
 import Home from './components/Home'
 import Test from './components/Test'
 import { makeStyles, Paper } from "@material-ui/core";
+import {getMe} from './utils/apiClient'
 
 const useStyles = makeStyles({
 
@@ -26,10 +27,17 @@ const App = ()=>{
       const classes = useStyles();
       const {setUserToken, setIsLoggedIn }= useContext(UserContext)
 
-    useEffect(()=>{
+    useEffect(async ()=>{
         if(localStorage.getItem('userToken')!=''){
-            setUserToken(localStorage.getItem('userToken'))
-            setIsLoggedIn(true)
+            const user = await getMe(localStorage.getItem('userToken'))
+            console.log('logggg', localStorage.getItem('userToken'))
+            if(user.username){
+                setUserToken(localStorage.getItem('userToken'))
+                setIsLoggedIn(true)
+            }else{
+                localStorage.setItem('userToken', '')
+                setIsLoggedIn(false)
+            }
         }
     }, [])
 

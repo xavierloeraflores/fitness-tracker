@@ -116,3 +116,71 @@ export const getAllActivities = async () =>{
       throw error
   }
 }
+
+export const postActivity = async (token, name, description)=>{
+  try{
+    const endpoint = '/activities'
+    const data = await request({
+      endpoint:endpoint,
+      method:'POST',
+      body:{
+        name,
+        description
+      },
+      token
+    })
+    return data
+  }catch(error){
+    throw error
+  }
+}
+
+export const postRoutine = async (token, name, goal, isPublic)=>{
+  try{
+    const endpoint = '/routines'
+    const data = await request({
+      endpoint:endpoint,
+      method:'POST',
+      body:{
+        name,
+        goal,
+        isPublic
+      },
+      token
+    })
+    return data
+  }catch(error){
+    throw error
+  }
+}
+
+export const deleteRoutine = async (token, routineId)=>{
+  try{
+    const endpoint = `/routines/${routineId}`
+    const data = await request({
+      endpoint:endpoint,
+      method:'DELETE',
+      token
+    })
+    return data
+  }catch(error){
+    throw error
+  }
+}
+export const deleteRoutineActivity = async (token, routineActivityId)=>{
+  try{
+    const endpoint = `/routine_activities/${routineActivityId}`
+    const data = await request({
+      endpoint:endpoint,
+      method:'DELETE',
+      token
+    })
+    return data
+  }catch(error){
+    throw error
+  }
+}
+
+
+
+

@@ -21,8 +21,6 @@ const Nav = () => {
         setIsLoggedIn(false)
         setUser()
         setUserToken('')
-
-        
         localStorage.setItem('userToken', '')
     }
 
