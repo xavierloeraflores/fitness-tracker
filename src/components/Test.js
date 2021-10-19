@@ -4,7 +4,7 @@ import {login, register, getMe} from '../utils/apiClient'
 
 
 function Test() {
-    const {userToken, setUserToken, setIsLoggedIn} = useContext(UserContext)
+    const {userToken, setUser, setUserToken, setIsLoggedIn} = useContext(UserContext)
 
     return (
         <>
@@ -15,6 +15,7 @@ function Test() {
             if(registerData) {
                 setUserToken(registerData.token)
                 setIsLoggedIn(true)
+                setUser(username)
             }
 
             }}>Register</button>
@@ -26,6 +27,7 @@ function Test() {
                 localStorage.setItem("userToken", loginData.token);
                 setUserToken(loginData.token)
                 setIsLoggedIn(true)
+                setUser('sandra')
             }
             }}>Sign In</button>
         <br/>

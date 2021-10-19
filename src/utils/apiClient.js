@@ -1,4 +1,5 @@
 const baseURL = 'https://cryptic-retreat-99508.herokuapp.com/api'
+const baseURL2 = 'https://fitnesstrac-kr.herokuapp.com/api'
 
 
 export const request = async ({endpoint, method, body, token})=>{
@@ -11,7 +12,7 @@ export const request = async ({endpoint, method, body, token})=>{
     }
     if(body) _request['body']= JSON.stringify(body)
     console.log("options",_request)
-    const resp = await fetch(baseURL+endpoint,_request)
+    const resp = await fetch(baseURL2+endpoint,_request)
     const data = await resp.json()
     
     console.log('apiClient', data)
@@ -24,7 +25,7 @@ export const request = async ({endpoint, method, body, token})=>{
       console.error(err)
     }
     finally{
-      console.log('request', baseURL+endpoint)
+      console.log('request', baseURL2+endpoint)
     }
 }
 

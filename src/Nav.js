@@ -19,7 +19,7 @@ const Nav = () => {
     const {setUser, isLoggedIn, setIsLoggedIn, setUserToken} = useContext(UserContext)
     const logOut = () => {
         setIsLoggedIn(false)
-        setUser()
+        setUser('')
         setUserToken('')
         localStorage.setItem('userToken', '')
     }

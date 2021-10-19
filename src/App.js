@@ -17,9 +17,9 @@ const useStyles = makeStyles({
       display: "flex",
       flexFlow:'column',
       alignItems:'center',
-      width:'80vw',
       minHeight:'75vh',
-      padding:'1rem'
+      padding:'1rem',
+      marginTop:'10rem'
         }
   });
     
@@ -31,7 +31,7 @@ const App = ()=>{
         if(localStorage.getItem('userToken')!=''){
             const user = await getMe(localStorage.getItem('userToken'))
             console.log('logggg', localStorage.getItem('userToken'))
-            if(user.username){
+            if(user && user.username){
                 setUserToken(localStorage.getItem('userToken'))
                 setIsLoggedIn(true)
             }else{
@@ -63,7 +63,7 @@ const App = ()=>{
             <Route path='/myroutines'>
                 <MyRoutines/>
             </Route>
-            <Test />
+            {/* <Test /> */}
 
         </Paper>
     )

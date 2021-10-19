@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import { getAllRoutines } from '../utils/apiClient'
 import Routine from './Routine'
 import { Typography } from '@material-ui/core'

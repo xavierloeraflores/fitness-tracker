@@ -19,7 +19,7 @@ const Authentication = () =>{
     const params = useParams()
     const classes = useStyles()
 
-    const {isLoggedIn, setIsLoggedIn, setUserToken } = useContext(UserContext)
+    const {isLoggedIn, setIsLoggedIn, setUserToken, setUser } = useContext(UserContext)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -43,6 +43,7 @@ const Authentication = () =>{
                 localStorage.setItem("userToken", registerData.token);
                 setUserToken(registerData.token)
                 setIsLoggedIn(true)
+                setUser(username)
             }else{
                 alert('failed')
             }
@@ -54,6 +55,7 @@ const Authentication = () =>{
                 localStorage.setItem("userToken", loginData.token);
                 setUserToken(loginData.token)
                 setIsLoggedIn(true)
+                setUser(username)
             }
         }
 
