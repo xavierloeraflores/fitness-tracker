@@ -68,7 +68,7 @@ const Authentication = () =>{
             setPassword(event.target.value)
         }}/>
         <br/>
-        <Button variant='contained'>Submit</Button>
+        <button variant='contained'>Submit</button>
     </form>
     </div>
     )
